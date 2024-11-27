@@ -1,0 +1,48 @@
+Contenu de l'Archive :
+
+main :
+EdGradientKirsh4SepMasksThrThi.c
+réalise les étapes séparées :
+1) Calcul du gradient en version pédagogique ;
+2) Seuillage sur la norme du gradient ;
+3) Affinage des Contours.
+
+Opérateurs : EdLib
+1) EdLibGradientKirsh4SepMasks.c, .h : opérateur gradient ;
+2) EdLibThreshold.c .h : opérateur de seuillage ;
+3) EdLibThinning.c .h : opérateur d'Affinage ;
+4) EdLibEdgeUtilities.c .h : Utilitaires pour la détection de contours.
+
+EdEnviTI :
+1) EdStructures.h
+2) EdUtilities.c .h
+
+Constitution du Projet :
+Les 5 fichiers .c 
+
+Première Etape : Optimisation du Calcul du Gradient :
+A. Recopier :
+1) EdGradientKirsh4SepMasksThrThi.c en EdGradientKirsh4GathMasksThrThi.c
+2) EdLibGradientKirsh4SepMasks.c, .h en EdLibGradientKirsh4GathMasks.c, .h
+
+B. Créer un nouveau Projet ContoursKGath
+Modifier les fichiers précédents. 
+
+Réalisé :
+Gradient optimisé : 
+- optimisation du calcul du gradient ;
+- optimisation par la fusion des étapes Gradient / Seuillage / Affinage
+Fichiers :
+EdGradientKirsh4GathMasksThrThi :
+EdGradientKirsh4GathMasksThrThi.c EdLibGradientKirsh4GathMasks.c EdUtilities.c EdLibEdgeUtilities.c 
+
+Adaptation à la Détection de Gradient en Imagerie Couleur RVB :
+Fichiers :
+EdRVBGradientThrThi : 
+EdRVBGradientThrThi.c EdLibRVBGradientThrThi.c EdUtilities.c EdLibEdgeUtilities.c 
+ 
+Mouvement par différence d'images
+Fichiers :
+EdMotionDiff.c
+EdLibMotionDiff.c
+

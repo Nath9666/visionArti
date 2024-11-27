@@ -1,0 +1,24 @@
+Programmes OpenCV
+
+Exemples sur Images 
+1.DisplayImage
+2.LissageImages
+3.InRange
+4.InRangeHSV
+
+Idem sur Vidéo Live
+5.DisplayVideo
+6.DisplayVideoBlur
+7.DisplayVideoInRangeBW
+8.DisplayVideoInRangeHSV
+
+Exemples de Traitements avec OpenCV
+9.HatThrAt
+10.ColorClassAt
+
+Exemples de Traitements from Scratch intégrés :
+11.CVEdMeanFiltering
+11.EdLibMeanFiltering (.cpp et .h)
+11.DSCCvUtilities (.cpp et .h)
+11.EdStructures (.h)
+12.DisplayVideoMeanFilteringBW
