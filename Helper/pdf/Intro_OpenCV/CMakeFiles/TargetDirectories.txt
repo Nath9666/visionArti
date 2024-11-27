@@ -1,3 +1,0 @@
-/home/patrickbonnin/Patrick/Intro_OpenCV/CMakeFiles/rebuild_cache.dir
-/home/patrickbonnin/Patrick/Intro_OpenCV/CMakeFiles/edit_cache.dir
-/home/patrickbonnin/Patrick/Intro_OpenCV/CMakeFiles/bin/1.DisplayImage.dir
