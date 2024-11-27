@@ -1,0 +1,22 @@
+TomeIII_src
+Programmes Réalisés :
+
+DisplayImage.cpp
+intégration de la lecture N&B et Couleur : fonctionnement validé
+
+Lissages.cpp
+Test moyen, gaussien et médian 3x3
+intégration sauvegarde 
+
+InRange
+intégration des Maxima et Minima
+Validation contrainte high >= low
+
+HatThrAt
+Seuillage Hat réalisé à partir de la méthode at 
+
+InRangeBlobXXX
+
+CVCannyCtrAppPoly_Priv
+
+CVVid_InRangeHSV.cpp
