@@ -3,6 +3,7 @@
 ## Installation
 
 [Video de l'installation de OpenCV avec Cmake](https://youtu.be/EqoH3gspQGg)
+[Installation VSCODE and OpenCV](https://youtu.be/HQJlsmIUXOQ)
 
 ## Chaine de tection des contours
 
@@ -19,4 +20,4 @@ Image display :
 
 le programme souvegarde les resultats dans un fichier texte
 le update redesine les contours
-premiere chose à regler c'est les point de contours, fenètre 
+premiere chose à regler c'est les point de contours, fenètre
