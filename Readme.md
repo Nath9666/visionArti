@@ -121,3 +121,7 @@ LegoTracker/
 
 5. **Statistiques avancées :**
    - Afficher des graphiques ou des tableaux avec des données comme les tailles et les couleurs.
+
+
+projet soutenance le 15/01/2025
+avec un rapport à rendre 
