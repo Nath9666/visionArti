@@ -1,0 +1,6 @@
+Le fichier `trained_model.h5` est un fichier binaire qui contient un modèle d'apprentissage automatique pré-entraîné. Il n'est pas possible de générer son contenu sous forme de texte, car il s'agit d'un fichier de données. 
+
+Cependant, vous pouvez créer un fichier vide avec un commentaire indiquant qu'il s'agit d'un modèle pré-entraîné. Voici le contenu :
+
+# trained_model.h5
+# Ce fichier contient un modèle d'apprentissage automatique pré-entraîné pour la reconnaissance des pièces de Lego.

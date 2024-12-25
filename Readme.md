@@ -1,11 +1,11 @@
 # LegoTracker
 
-Le but de ce projet est de reconnaitre le nombre de lego dans une image et de les compter.
+Le but de ce projet est de reconnaître le nombre de Lego dans une image et de les compter.
 
 ## Installation de OpenCV
 
-[Video de l'installation de OpenCV avec Cmake](https://youtu.be/EqoH3gspQGg)
-[Installation VSCODE and OpenCV](https://youtu.be/HQJlsmIUXOQ)
+[Vidéo de l'installation de OpenCV avec CMake](https://youtu.be/EqoH3gspQGg)  
+[Installation de VSCode et OpenCV](https://youtu.be/HQJlsmIUXOQ)
 
 ## **Timeline et étapes**
 
@@ -15,7 +15,7 @@ Le but de ce projet est de reconnaitre le nombre de lego dans une image et de le
    - Étudier les fonctionnalités d’OpenCV pour le traitement d’image.
    - Examiner des exemples de détection d’objets simples.
 2. **Installation et configuration :**
-   - Installer OpenCV avec un environnement de développement pour C++ (comme Visual Studio ou VS Code).
+   - Installer OpenCV avec un environnement de développement pour C++.
    - Configurer les dépendances nécessaires.
 
 ---
@@ -33,7 +33,7 @@ Le but de ce projet est de reconnaitre le nombre de lego dans une image et de le
    - Utiliser des techniques comme la détection de contours (Canny, Sobel) pour isoler les Legos.
    - Appliquer des transformations morphologiques (dilatation, érosion) pour améliorer la segmentation.
 4. **Identification des Legos :**
-   - Utiliser des algorithmes comme la détection de formes géométriques ou l’analyse des composantes connectées (connected components analysis).
+   - Utiliser des algorithmes comme la détection de formes géométriques ou l’analyse des composantes connectées.
    - Calculer la taille et d’autres caractéristiques pour différencier les Legos.
 
 ---
@@ -73,6 +73,29 @@ Le but de ce projet est de reconnaitre le nombre de lego dans une image et de le
 
 ---
 
+## **Utilisation de modèles d'intelligence artificielle**
+
+Le projet intègre également des modèles d'intelligence artificielle pour améliorer la reconnaissance des pièces de Lego. Voici quelques idées :
+
+1. **Reconnaissance des couleurs :**
+   - Utiliser la décomposition HSV pour détecter les couleurs principales des Legos.
+   - Compter les Legos par couleur (par exemple, 5 rouges, 3 bleus).
+
+2. **Détection avancée avec apprentissage automatique :**
+   - Entraîner un modèle léger comme un réseau convolutif pour détecter les Legos.
+   - Utiliser des modèles pré-entraînés comme YOLO ou SSD si nécessaire.
+
+3. **Reconnaissance de formes :**
+   - Distinguer les types de Legos (par exemple, 2x2, 2x4) en fonction de leur taille ou de leur aspect.
+
+4. **Vidéo en temps réel :**
+   - Adapter le programme pour détecter et compter les Legos dans une vidéo ou via une webcam.
+
+5. **Statistiques avancées :**
+   - Afficher des graphiques ou des tableaux avec des données comme les tailles et les couleurs.
+
+---
+
 ## **Arborescence du code**
 
 ```
@@ -80,7 +103,7 @@ LegoTracker/
 ├── include/
 │   ├── image_processing.hpp  // Fonctions pour le traitement d'image
 │   ├── lego_detection.hpp    // Fonctions pour la détection de Legos
-│   └── utils.hpp             // Fonctions utilitaires (chargement  d'images, affichage)
+│   └── utils.hpp             // Fonctions utilitaires (chargement d'images, affichage)
 ├── src/
 │   ├── main.cpp              // Point d'entrée principal
 │   ├── image_processing.cpp  // Implémentation des fonctions de traitement d'image
@@ -93,35 +116,13 @@ LegoTracker/
 ├── tests/
 │   ├── test_detection.cpp    // Tests unitaires pour la détection
 │   └── test_processing.cpp   // Tests unitaires pour le traitement
+├── models/
+│   ├── trained_model.h5      // Modèle d'apprentissage automatique pré-entraîné
+│   └── model_training.py      // Code pour entraîner un modèle d'apprentissage automatique
 ├── CMakeLists.txt            // Fichier de configuration pour la compilation
 └── README.md                 // Documentation du projet
 ```
 
 ---
 
-## **Idées supplémentaires pour enrichir le projet**
-
-1. **Reconnaissance des couleurs :**
-
-   - Utiliser la décomposition HSV pour détecter les couleurs principales des Legos.
-   - Compter les Legos par couleur (par exemple, 5 rouges, 3 bleus).
-
-2. **Détection avancée avec apprentissage automatique :**
-
-   - Entraîner un modèle léger comme un réseau convolutif pour détecter les Legos.
-   - Utiliser des modèles pré-entraînés comme YOLO ou SSD si nécessaire.
-
-3. **Reconnaissance de formes :**
-
-   - Distinguer les types de Legos (par exemple, 2x2, 2x4) en fonction de leur taille ou de leur aspect.
-
-4. **Vidéo en temps réel :**
-
-   - Adapter le programme pour détecter et compter les Legos dans une vidéo ou via une webcam.
-
-5. **Statistiques avancées :**
-   - Afficher des graphiques ou des tableaux avec des données comme les tailles et les couleurs.
-
-
-projet soutenance le 15/01/2025
-avec un rapport à rendre 
+## Projet soutenance le 15/01/2025 avec un rapport à rendre.

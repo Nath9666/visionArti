@@ -1,0 +1,23 @@
+# Ignorer les fichiers binaires compilés
+*.o
+*.exe
+*.out
+*.test
+/build/
+/opencv/
+/out
+
+# Ignorer les fichiers de configuration de l'éditeur
+.vscode/
+.idea/
+*.swp
+
+# Ignorer les fichiers de logs
+*.log
+
+# Ignorer les fichiers temporaires
+*.tmp
+*.bak
+
+# Ignorer les fichiers de modèle
+/models/*.h5

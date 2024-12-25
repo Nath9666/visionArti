@@ -5,6 +5,10 @@
     "Github, Lego Detection":"https://github.com/luminous-Nc/LegoDetection",
     "LegoCraftAI: Lego Detection and Shape Advisor":"https://github.com/majid-200/LegoCraft-AI",
     "Open CV installation": "https://youtu.be/EqoH3gspQGg",
-    "How to use open CV": "https://youtu.be/HQJlsmIUXOQ"
+    "How to use open CV": "https://youtu.be/HQJlsmIUXOQ",
 
+    "DataSet LegoBricks OnebyOne":"https://www.kaggle.com/datasets/francescjr/lego-vs-unknown-cropped",
+    "DataSet LegoBricks OnebyOne 3D":"https://www.kaggle.com/datasets/interruptspeed/1600-lego-bricks-224x224",
+    "DataSet LegoBricks OnebyOne reel":"https://www.kaggle.com/datasets/ronanpickell/b200c-lego-classification-dataset",
+    "DataSet LegoBricks Vrack reel":"https://www.kaggle.com/datasets/ronanpickell/b100-lego-detection-dataset?resource=download"
 }
