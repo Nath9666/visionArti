@@ -3,7 +3,7 @@
 
 int main() {
     // Lire l'image
-    cv::Mat image = cv::imread("path_to_your_image.jpg");
+    cv::Mat image = cv::imread("./data/images/101.png");
 
     // Vérifier si l'image est chargée correctement
     if(image.empty()) {

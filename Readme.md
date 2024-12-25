@@ -4,74 +4,20 @@ Le but de ce projet est de reconnaître le nombre de Lego dans une image et de l
 
 ## Installation de OpenCV
 
-[Vidéo de l'installation de OpenCV avec CMake](https://youtu.be/EqoH3gspQGg)  
-[Installation de VSCode et OpenCV](https://youtu.be/HQJlsmIUXOQ)
+Dans un premier temps, il est nécessaire d'installer OpenCV sur votre machine. 
+Pour cela je vous conseille de suivre se tuto : [Installation OpenCV](https://youtu.be/aMXQshF7zdo)
+Ou d'aller sur le site officiel d'OpenCV : [OpenCV](https://opencv.org/releases/)
 
-## **Timeline et étapes**
+Vous avez donc un .exe nommé "opencv-4.6.0-vc14_vc15.exe" que vous allez installer sur votre machine. 
+Une fois cliquer sur le .exe, vous allez avoir une fenêtre qui va s'ouvrir.
+Et vous aller mettre openCV dans le dossier VisionArti.
 
-### **Phase 1 : Préparation (1 semaine)**
+Vous aurrez juste a aller a l'adresse suivante pour configurer vos varible d'environnement:
+[.env](./opencvbuild/setup_vars_opencv4.cmd)
 
-1. **Recherche et familiarisation :**
-   - Étudier les fonctionnalités d’OpenCV pour le traitement d’image.
-   - Examiner des exemples de détection d’objets simples.
-2. **Installation et configuration :**
-   - Installer OpenCV avec un environnement de développement pour C++.
-   - Configurer les dépendances nécessaires.
+Une fois cela fait je vous conseille de fermer puis réouvrir VSCode pour que les changements soit pris en compte.
+Après cela vous pouvvez lancer le programme.
 
----
-
-### **Phase 2 : Analyse et traitement d’image (2 semaines)**
-
-1. **Collecte d'images :**
-   - Collecter ou capturer des images de Legos dans différentes configurations.
-   - Annoter les images (optionnel si un modèle d’apprentissage supervisé est nécessaire).
-2. **Prétraitement d’image :**
-   - Convertir les images en niveaux de gris.
-   - Appliquer des filtres pour réduire le bruit (filtre gaussien, médian).
-   - Binarisation (méthode d’Otsu ou adaptation locale).
-3. **Segmentation des Legos :**
-   - Utiliser des techniques comme la détection de contours (Canny, Sobel) pour isoler les Legos.
-   - Appliquer des transformations morphologiques (dilatation, érosion) pour améliorer la segmentation.
-4. **Identification des Legos :**
-   - Utiliser des algorithmes comme la détection de formes géométriques ou l’analyse des composantes connectées.
-   - Calculer la taille et d’autres caractéristiques pour différencier les Legos.
-
----
-
-### **Phase 3 : Comptage et affichage (1 semaine)**
-
-1. **Détection et comptage :**
-   - Implémenter un compteur basé sur le nombre de contours détectés.
-   - Filtrer les objets par taille ou forme pour éviter les faux positifs.
-2. **Affichage des résultats :**
-   - Superposer des rectangles ou cercles autour des Legos détectés dans l’image d’origine.
-   - Afficher le nombre total de Legos détectés.
-
----
-
-### **Phase 4 : Validation et amélioration (2 semaines)**
-
-1. **Tests avec différents scénarios :**
-   - Vérifier la précision du comptage sur des images complexes (ombres, chevauchements).
-   - Ajuster les paramètres du traitement d’image.
-2. **Améliorations :**
-   - Introduire la reconnaissance des couleurs pour distinguer les Legos par couleur.
-   - Ajouter une interface utilisateur simple avec une bibliothèque comme Qt.
-3. **Optimisation :**
-   - Améliorer les performances pour traiter plusieurs images rapidement.
-
----
-
-### **Phase 5 : Documentation et livraison (1 semaine)**
-
-1. **Documentation :**
-   - Rédiger des commentaires dans le code pour expliquer chaque étape.
-   - Préparer un guide utilisateur pour exécuter le programme.
-2. **Livraison :**
-   - Créer un exécutable ou un installeur.
-   - Fournir les fichiers nécessaires pour reproduire le projet.
-
----
 
 ## **Utilisation de modèles d'intelligence artificielle**
 
@@ -99,7 +45,6 @@ Le projet intègre également des modèles d'intelligence artificielle pour amé
 ## **Arborescence du code**
 
 ```
-LegoTracker/
 ├── include/
 │   ├── image_processing.hpp  // Fonctions pour le traitement d'image
 │   ├── lego_detection.hpp    // Fonctions pour la détection de Legos
