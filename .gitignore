@@ -5,6 +5,7 @@
 *.zip
 /build/
 /opencv/
+opencv-4.6.0-vc14_vc15.exe
 
 # Ignorer les fichiers de configuration de l'éditeur
 .vscode/
