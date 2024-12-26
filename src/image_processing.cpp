@@ -1,5 +1,6 @@
 #include "image_processing.hpp"
 #include <opencv2/opencv.hpp>
+#include <thread> // Pour obtenir le nombre de cœurs du processeur
 
 using namespace cv;
 
@@ -12,6 +13,14 @@ Mat convertToGray(const Mat& inputImage) {
 
 // Fonction pour appliquer un filtre gaussien
 Mat applyGaussianBlur(const Mat& inputImage, int kernelSize) {
+    // Vérifier que la taille du noyau est positive et impaire
+    if (kernelSize <= 0) {
+        kernelSize = 1; // Valeur par défaut
+    }
+    if (kernelSize % 2 == 0) {
+        kernelSize += 1; // Rendre la taille impaire
+    }
+
     Mat blurredImage;
     GaussianBlur(inputImage, blurredImage, Size(kernelSize, kernelSize), 0);
     return blurredImage;
@@ -27,13 +36,23 @@ Mat binarizeImage(const Mat& grayImage) {
 // Fonction pour réduire le bruit dans une image
 Mat reduceNoise(const Mat& inputImage) {
     Mat denoisedImage;
+
+    // Obtenir le nombre de cœurs du processeur
+    unsigned int numCores = std::thread::hardware_concurrency();
+
+    // Ajuster les paramètres de réduction de bruit en fonction du nombre de cœurs
+    int h = int(numCores/4); // Paramètre de filtre pour fastNlMeansDenoising
+    int hForColorComponents = int(numCores/4); // Paramètre de filtre pour fastNlMeansDenoisingColored
+
+    //Affiche le nombre de coeurs
+    std::cout << "Nombre de coeurs : " << numCores << std::endl;
+
     if (inputImage.channels() == 1) {
-        // Si l'image est en niveaux de gris, la convertir en BGR
-        Mat bgrImage;
-        cvtColor(inputImage, bgrImage, COLOR_GRAY2BGR);
-        fastNlMeansDenoisingColored(bgrImage, denoisedImage, 10, 10, 7, 21);
+        // Si l'image est en niveaux de gris, utiliser fastNlMeansDenoising
+        fastNlMeansDenoising(inputImage, denoisedImage, h, 7, 21);
     } else {
-        fastNlMeansDenoisingColored(inputImage, denoisedImage, 10, 10, 7, 21);
+        // Si l'image est en couleur, utiliser fastNlMeansDenoisingColored avec des paramètres ajustés
+        fastNlMeansDenoisingColored(inputImage, denoisedImage, h, hForColorComponents, 7, 21);
     }
     return denoisedImage;
 }
@@ -41,14 +60,8 @@ Mat reduceNoise(const Mat& inputImage) {
 // Fonction principale de traitement d'image
 Mat processImage(const Mat& inputImage) {
     Mat grayImage = convertToGray(inputImage);
-    cv::imshow("grayImage", grayImage);
-    cv::waitKey(0);
-    Mat blurredImage = applyGaussianBlur(grayImage, 2);
-    cv::imshow("blurredImage", blurredImage);
-    cv::waitKey(0);
+    Mat blurredImage = applyGaussianBlur(grayImage, 5);
     Mat binaryImage = binarizeImage(blurredImage);
-    cv::imshow("binaryImage", binaryImage);
-    cv::waitKey(0);
     //Mat denoisedImage = reduceNoise(binaryImage);
     return binaryImage;
 }

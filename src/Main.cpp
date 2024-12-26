@@ -20,16 +20,16 @@ int main() {
     cv::waitKey(0);
 
     // Prétraitement de l'image
-    cv::Mat processedImage = processImage(image);
+    //cv::Mat processedImage = processImage(image);
 
     // Détection des Legos
     std::vector<cv::Rect> legos;
-    int legoCount = detectLegos(processedImage, legos);
+    int legoCount = detectLegos(image, legos);
 
     // Affichage des résultats
     displayDetectionResults(image, legos);
 
-    std::cout << "Nombre de Legos détectés : " << legoCount << std::endl;
+    std::cout << "Nombre de Legos : " << legoCount << std::endl;
 
     return EXIT_SUCCESS;
 }
