@@ -1,11 +1,10 @@
 # Ignorer les fichiers binaires compilés
 *.o
-*.exe
 *.out
 *.test
+*.zip
 /build/
 /opencv/
-/out
 
 # Ignorer les fichiers de configuration de l'éditeur
 .vscode/

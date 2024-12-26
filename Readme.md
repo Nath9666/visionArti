@@ -56,11 +56,7 @@ Le projet intègre également des modèles d'intelligence artificielle pour amé
 │   └── utils.cpp             // Implémentation des fonctions utilitaires
 ├── data/
 │   ├── images/               // Images d'entrée
-│   ├── results/              // Images avec annotations
-│   └── test_cases/           // Images de test
-├── tests/
-│   ├── test_detection.cpp    // Tests unitaires pour la détection
-│   └── test_processing.cpp   // Tests unitaires pour le traitement
+│   └── results/              // Donnée (.xlm ou .json) de sortie
 ├── models/
 │   ├── trained_model.h5      // Modèle d'apprentissage automatique pré-entraîné
 │   └── model_training.py      // Code pour entraîner un modèle d'apprentissage automatique
@@ -71,3 +67,11 @@ Le projet intègre également des modèles d'intelligence artificielle pour amé
 ---
 
 ## Projet soutenance le 15/01/2025 avec un rapport à rendre.
+
+# Amelioration possible du projet par le cour
+
+Approximation Polygonale ou autre
+Transformation de Hough
+Directement après l'Affinage
+Segmentation de region
+Algorithme d’Horowicz et Pavlidis
