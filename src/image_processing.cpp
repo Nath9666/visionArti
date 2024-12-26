@@ -27,15 +27,28 @@ Mat binarizeImage(const Mat& grayImage) {
 // Fonction pour réduire le bruit dans une image
 Mat reduceNoise(const Mat& inputImage) {
     Mat denoisedImage;
-    fastNlMeansDenoisingColored(inputImage, denoisedImage, 10, 10, 7, 21);
+    if (inputImage.channels() == 1) {
+        // Si l'image est en niveaux de gris, la convertir en BGR
+        Mat bgrImage;
+        cvtColor(inputImage, bgrImage, COLOR_GRAY2BGR);
+        fastNlMeansDenoisingColored(bgrImage, denoisedImage, 10, 10, 7, 21);
+    } else {
+        fastNlMeansDenoisingColored(inputImage, denoisedImage, 10, 10, 7, 21);
+    }
     return denoisedImage;
 }
 
 // Fonction principale de traitement d'image
 Mat processImage(const Mat& inputImage) {
     Mat grayImage = convertToGray(inputImage);
-    Mat blurredImage = applyGaussianBlur(grayImage, 5);
+    cv::imshow("grayImage", grayImage);
+    cv::waitKey(0);
+    Mat blurredImage = applyGaussianBlur(grayImage, 2);
+    cv::imshow("blurredImage", blurredImage);
+    cv::waitKey(0);
     Mat binaryImage = binarizeImage(blurredImage);
-    Mat denoisedImage = reduceNoise(binaryImage);
-    return denoisedImage;
+    cv::imshow("binaryImage", binaryImage);
+    cv::waitKey(0);
+    //Mat denoisedImage = reduceNoise(binaryImage);
+    return binaryImage;
 }

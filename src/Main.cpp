@@ -1,5 +1,7 @@
-#include <opencv2/opencv.hpp>
 #include <iostream>
+#include "image_processing.hpp"
+#include "lego_detection.hpp"
+#include "utils.hpp"
 
 int main() {
     // Lire l'image
@@ -17,5 +19,17 @@ int main() {
     // Attendre une touche pour fermer la fenêtre
     cv::waitKey(0);
 
-    return 0;
+    // Prétraitement de l'image
+    cv::Mat processedImage = processImage(image);
+
+    // Détection des Legos
+    std::vector<cv::Rect> legos;
+    int legoCount = detectLegos(processedImage, legos);
+
+    // Affichage des résultats
+    displayDetectionResults(image, legos);
+
+    std::cout << "Nombre de Legos détectés : " << legoCount << std::endl;
+
+    return EXIT_SUCCESS;
 }

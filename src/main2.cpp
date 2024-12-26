@@ -3,7 +3,7 @@
 #include "lego_detection.hpp"
 #include "utils.hpp"
 
-int main(int argc, char** argv) {
+int test(int argc, char** argv) {
     // Vérification des arguments
     if (argc < 2) {
         std::cerr << "Usage: " << argv[0] << " <image_path>" << std::endl;
@@ -19,13 +19,14 @@ int main(int argc, char** argv) {
     }
 
     // Prétraitement de l'image
-    cv::Mat processedImage = preprocessImage(image);
+    cv::Mat processedImage = processImage(image);
 
     // Détection des Legos
-    std::vector<DetectedLego> legos = detectLegos(processedImage);
+    std::vector<cv::Rect> legos;
+    int legoCount = detectLegos(processedImage, legos);
 
     // Affichage des résultats
-    displayResults(image, legos);
+    displayDetectionResults(image, legos);
 
     return EXIT_SUCCESS;
 }
