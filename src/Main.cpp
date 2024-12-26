@@ -5,7 +5,7 @@
 
 int main() {
     // Lire l'image
-    cv::Mat image = cv::imread("./data/images/101.png");
+    cv::Mat image = cv::imread("./data/images/1001.png");
 
     // Vérifier si l'image est chargée correctement
     if(image.empty()) {
