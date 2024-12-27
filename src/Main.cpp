@@ -13,23 +13,33 @@ int main() {
         return -1;
     }
 
-    // Afficher l'image
-    cv::imshow("Image", image);
+    //Afficher l'image
+    displayImage("Image d'origine", image);
 
-    // Attendre une touche pour fermer la fenêtre
-    cv::waitKey(0);
+    // Créer les trackbars
+    createTrackbars();
 
-    // Prétraitement de l'image
-    //cv::Mat processedImage = processImage(image);
+    bool showTrackbars = true;
 
-    // Détection des Legos
-    std::vector<cv::Rect> legos;
-    int legoCount = detectLegos(image, legos);
+    while (showTrackbars) {
+        // Détecter les Legos
+        std::vector<cv::Rect> detectedLegos;
+        int legoCount = detectLegos(image, detectedLegos);
 
-    // Affichage des résultats
-    displayDetectionResults(image, legos);
+        // Afficher les résultats de la détection
+        displayDetectionResults(image, detectedLegos);
 
-    std::cout << "Nombre de Legos : " << legoCount << std::endl;
+        // Afficher le nombre de Legos détectés
+        std::cout << "Nombre de Legos : " << legoCount << std::endl;
+
+        // Attendre 30 ms pour permettre la mise à jour des trackbars
+        if (cv::waitKey(2) >= 0) break;
+
+        // toucher 'q' pour quitter
+        if (cv::waitKey(2) == 'q') {
+            showTrackbars = false;
+        }
+    }
 
     return EXIT_SUCCESS;
 }

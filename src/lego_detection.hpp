@@ -10,4 +10,6 @@ int detectLegos(const cv::Mat& inputImage, std::vector<cv::Rect>& detectedLegos)
 // Fonction pour afficher les résultats de la détection
 void displayDetectionResults(const cv::Mat& inputImage, const std::vector<cv::Rect>& detectedLegos);
 
+void createTrackbars();
+
 #endif // LEGO_DETECTION_HPP

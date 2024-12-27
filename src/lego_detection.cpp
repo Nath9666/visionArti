@@ -4,6 +4,19 @@
 #include <opencv2/opencv.hpp>
 #include <vector>
 
+// Variables globales pour les trackbars
+int seuil = 100;
+int thresh = 100;
+
+// Callback pour les trackbars (ne fait rien, juste pour satisfaire l'API)
+void onTrackbar(int, void*) {}
+
+void createTrackbars() {
+    cv::namedWindow("Trackbars", cv::WINDOW_AUTOSIZE);
+    cv::createTrackbar("Seuil", "Trackbars", &seuil, 500, onTrackbar);
+    cv::createTrackbar("Thresh", "Trackbars", &thresh, 500, onTrackbar);
+}
+
 // Fonction pour détecter et compter les Legos dans une image
 int detectLegos(const cv::Mat& inputImage, std::vector<cv::Rect>& detectedLegos) {
     // Convertir l'image en espace de couleur HSV
@@ -27,15 +40,30 @@ int detectLegos(const cv::Mat& inputImage, std::vector<cv::Rect>& detectedLegos)
     cv::bitwise_and(inputImage, inputImage, maskedImage, combinedMask);
 
     // Convertir l'image masquée en niveaux de gris
-    cv::Mat grayImage = convertToGray(maskedImage);
-    cv::Mat blurredImage = applyGaussianBlur(grayImage, 10);
+    cv::Mat grayImage = convertToGray(inputImage);
+    cv::Mat blurredImage = applyGaussianBlur(grayImage, 5);
     cv::Mat binaryImage = binarizeImage(blurredImage);
-    displayImage("Binary Image", binaryImage);
-    //cv::Mat denoisedImage = reduceNoise(binaryImage);
+
+    // Segmentation de région par croissance de région
+    cv::Mat labels, stats, centroids;
+    int numLabels = cv::connectedComponentsWithStats(binaryImage, labels, stats, centroids, 8, CV_32S);
+
+    // Identification des Legos par leurs régions
+    int legoCount = 0;
+    for (int i = 1; i < numLabels; i++) { // Commencer à 1 pour ignorer le fond
+        int area = stats.at<int>(i, cv::CC_STAT_AREA);
+        if (area > seuil) { // Filtrer les petites régions
+            legoCount++;
+            int x = stats.at<int>(i, cv::CC_STAT_LEFT);
+            int y = stats.at<int>(i, cv::CC_STAT_TOP);
+            int width = stats.at<int>(i, cv::CC_STAT_WIDTH);
+            int height = stats.at<int>(i, cv::CC_STAT_HEIGHT);
+            detectedLegos.push_back(cv::Rect(x, y, width, height));
+        }
+    }
 
     // Détection des contours avec Canny
     cv::Mat cannyOutput;
-    int thresh = 100; // Seuil pour la détection des contours
     cv::Canny(binaryImage, cannyOutput, thresh, thresh * 2);
 
     // Détection des contours avec hiérarchie
@@ -50,8 +78,6 @@ int detectLegos(const cv::Mat& inputImage, std::vector<cv::Rect>& detectedLegos)
     }
 
     // Identification des Legos par leurs contours
-    int legoCount = 0;
-    int seuil = 100;
     for (size_t i = 0; i < approxContours.size(); i++) {
         double area = cv::contourArea(approxContours[i]);
         if (area > seuil) { // Filtrer les petits objets
@@ -60,9 +86,6 @@ int detectLegos(const cv::Mat& inputImage, std::vector<cv::Rect>& detectedLegos)
             detectedLegos.push_back(boundingBox);
         }
     }
-
-    // Afficher le nombre de contours
-    std::cerr << "Nombre de contours : " << approxContours.size() << std::endl;
 
     return legoCount; // Retourne le nombre de Legos détectés
 }
@@ -81,7 +104,6 @@ void displayDetectionResults(const cv::Mat& inputImage, const std::vector<cv::Re
         cv::rectangle(outputImage, lego, cv::Scalar(0, 255, 0), 2);
     }
 
-    // Afficher l'image avec les résultats
-    cv::imshow("Detected Legos", outputImage);
-    cv::waitKey(0);
+    // Afficher l'image avec les rectangles
+    displayImage("Résultats de la détection", outputImage);
 }
