@@ -4,21 +4,8 @@
 #include <opencv2/opencv.hpp>
 #include <vector>
 
-// Variables globales pour les trackbars
-int seuil = 100;
-int thresh = 100;
-
-// Callback pour les trackbars (ne fait rien, juste pour satisfaire l'API)
-void onTrackbar(int, void*) {}
-
-void createTrackbars() {
-    cv::namedWindow("Trackbars", cv::WINDOW_AUTOSIZE);
-    cv::createTrackbar("Seuil", "Trackbars", &seuil, 500, onTrackbar);
-    cv::createTrackbar("Thresh", "Trackbars", &thresh, 500, onTrackbar);
-}
-
 // Fonction pour détecter et compter les Legos dans une image
-int detectLegos(const cv::Mat& inputImage, std::vector<cv::Rect>& detectedLegos) {
+int detectLegos(const cv::Mat& inputImage, std::vector<cv::Rect>& detectedLegos, int seuil, int thresh) {
     // Convertir l'image en espace de couleur HSV
     cv::Mat hsvImage;
     cv::cvtColor(inputImage, hsvImage, cv::COLOR_BGR2HSV);
