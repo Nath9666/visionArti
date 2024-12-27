@@ -26,7 +26,7 @@ events:
       Microsoft (R) Build Engine version 16.11.2+f32259642 pour .NET Framework
       Copyright (C) Microsoft Corporation. Tous droits réservés.
       
-      La génération a démarré 27/12/2024 00:33:44.
+      La génération a démarré 27/12/2024 17:09:18.
       Projet "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\3.29.5-msvc4\\CompilerIdC\\CompilerIdC.vcxproj" sur le noud 1 (cibles par défaut).
       PrepareForBuild:
         Création du répertoire "Debug\\".
@@ -52,7 +52,7 @@ events:
           0 Avertissement(s)
           0 Erreur(s)
       
-      Temps écoulé 00:00:01.50
+      Temps écoulé 00:00:01.51
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -80,7 +80,7 @@ events:
       Microsoft (R) Build Engine version 16.11.2+f32259642 pour .NET Framework
       Copyright (C) Microsoft Corporation. Tous droits réservés.
       
-      La génération a démarré 27/12/2024 00:33:46.
+      La génération a démarré 27/12/2024 17:09:20.
       Projet "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\3.29.5-msvc4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" sur le noud 1 (cibles par défaut).
       PrepareForBuild:
         Création du répertoire "Debug\\".
@@ -106,7 +106,7 @@ events:
           0 Avertissement(s)
           0 Erreur(s)
       
-      Temps écoulé 00:00:01.37
+      Temps écoulé 00:00:01.25
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -125,8 +125,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools\u00a02019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-ulyiw0"
-      binary: "C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools\u00a02019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-ulyiw0"
+      source: "C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools\u00a02019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-xcol57"
+      binary: "C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools\u00a02019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-xcol57"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -135,39 +135,39 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools 2019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-ulyiw0'
+        Change Dir: 'C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools 2019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-xcol57'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_0704e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_a38a1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
         Microsoft (R) Build Engine version 16.11.2+f32259642 pour .NET Framework
         Copyright (C) Microsoft Corporation. Tous droits réservés.
         
-        La génération a démarré 27/12/2024 00:33:48.
-        Projet "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-ulyiw0\\cmTC_0704e.vcxproj" sur le noud 1 (cibles par défaut).
+        La génération a démarré 27/12/2024 17:09:21.
+        Projet "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-xcol57\\cmTC_a38a1.vcxproj" sur le noud 1 (cibles par défaut).
         PrepareForBuild:
-          Création du répertoire "cmTC_0704e.dir\\Debug\\".
-          Création du répertoire "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-ulyiw0\\Debug\\".
-          Création du répertoire "cmTC_0704e.dir\\Debug\\cmTC_0704e.tlog\\".
+          Création du répertoire "cmTC_a38a1.dir\\Debug\\".
+          Création du répertoire "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-xcol57\\Debug\\".
+          Création du répertoire "cmTC_a38a1.dir\\Debug\\cmTC_a38a1.tlog\\".
         InitializeBuildStatus:
-          Création de "cmTC_0704e.dir\\Debug\\cmTC_0704e.tlog\\unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+          Création de "cmTC_a38a1.dir\\Debug\\cmTC_a38a1.tlog\\unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0704e.dir\\Debug\\\\" /Fd"cmTC_0704e.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a38a1.dir\\Debug\\\\" /Fd"cmTC_a38a1.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
           Compilateur d'optimisation Microsoft (R) C/C++ version 19.29.30151 pour x64
           Copyright (C) Microsoft Corporation. Tous droits réservés.
           CMakeCCompilerABI.c
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0704e.dir\\Debug\\\\" /Fd"cmTC_0704e.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a38a1.dir\\Debug\\\\" /Fd"cmTC_a38a1.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-ulyiw0\\Debug\\cmTC_0704e.exe" /INCREMENTAL /ILK:"cmTC_0704e.dir\\Debug\\cmTC_0704e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools 2019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-ulyiw0/Debug/cmTC_0704e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools 2019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-ulyiw0/Debug/cmTC_0704e.lib" /MACHINE:X64  /machine:x64 cmTC_0704e.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_0704e.vcxproj -> C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-ulyiw0\\Debug\\cmTC_0704e.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-xcol57\\Debug\\cmTC_a38a1.exe" /INCREMENTAL /ILK:"cmTC_a38a1.dir\\Debug\\cmTC_a38a1.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools 2019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-xcol57/Debug/cmTC_a38a1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools 2019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-xcol57/Debug/cmTC_a38a1.lib" /MACHINE:X64  /machine:x64 cmTC_a38a1.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_a38a1.vcxproj -> C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-xcol57\\Debug\\cmTC_a38a1.exe
         FinalizeBuildStatus:
-          Suppression du fichier "cmTC_0704e.dir\\Debug\\cmTC_0704e.tlog\\unsuccessfulbuild".
-          Mise à jour de l'horodatage "cmTC_0704e.dir\\Debug\\cmTC_0704e.tlog\\cmTC_0704e.lastbuildstate".
-        Génération du projet "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-ulyiw0\\cmTC_0704e.vcxproj" terminée (cibles par défaut).
+          Suppression du fichier "cmTC_a38a1.dir\\Debug\\cmTC_a38a1.tlog\\unsuccessfulbuild".
+          Mise à jour de l'horodatage "cmTC_a38a1.dir\\Debug\\cmTC_a38a1.tlog\\cmTC_a38a1.lastbuildstate".
+        Génération du projet "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-xcol57\\cmTC_a38a1.vcxproj" terminée (cibles par défaut).
         
         La génération a réussi.
             0 Avertissement(s)
             0 Erreur(s)
         
-        Temps écoulé 00:00:01.21
+        Temps écoulé 00:00:01.13
         
       exitCode: 0
   -
@@ -207,8 +207,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools\u00a02019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-hrip2q"
-      binary: "C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools\u00a02019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-hrip2q"
+      source: "C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools\u00a02019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-oq6vb5"
+      binary: "C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools\u00a02019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-oq6vb5"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -218,39 +218,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools 2019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-hrip2q'
+        Change Dir: 'C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools 2019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-oq6vb5'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_bccdf.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_f4280.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
         Microsoft (R) Build Engine version 16.11.2+f32259642 pour .NET Framework
         Copyright (C) Microsoft Corporation. Tous droits réservés.
         
-        La génération a démarré 27/12/2024 00:33:49.
-        Projet "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-hrip2q\\cmTC_bccdf.vcxproj" sur le noud 1 (cibles par défaut).
+        La génération a démarré 27/12/2024 17:09:23.
+        Projet "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-oq6vb5\\cmTC_f4280.vcxproj" sur le noud 1 (cibles par défaut).
         PrepareForBuild:
-          Création du répertoire "cmTC_bccdf.dir\\Debug\\".
-          Création du répertoire "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-hrip2q\\Debug\\".
-          Création du répertoire "cmTC_bccdf.dir\\Debug\\cmTC_bccdf.tlog\\".
+          Création du répertoire "cmTC_f4280.dir\\Debug\\".
+          Création du répertoire "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-oq6vb5\\Debug\\".
+          Création du répertoire "cmTC_f4280.dir\\Debug\\cmTC_f4280.tlog\\".
         InitializeBuildStatus:
-          Création de "cmTC_bccdf.dir\\Debug\\cmTC_bccdf.tlog\\unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+          Création de "cmTC_f4280.dir\\Debug\\cmTC_f4280.tlog\\unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_bccdf.dir\\Debug\\\\" /Fd"cmTC_bccdf.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f4280.dir\\Debug\\\\" /Fd"cmTC_f4280.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
           Compilateur d'optimisation Microsoft (R) C/C++ version 19.29.30151 pour x64
           Copyright (C) Microsoft Corporation. Tous droits réservés.
           CMakeCXXCompilerABI.cpp
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_bccdf.dir\\Debug\\\\" /Fd"cmTC_bccdf.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f4280.dir\\Debug\\\\" /Fd"cmTC_f4280.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-hrip2q\\Debug\\cmTC_bccdf.exe" /INCREMENTAL /ILK:"cmTC_bccdf.dir\\Debug\\cmTC_bccdf.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools 2019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-hrip2q/Debug/cmTC_bccdf.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools 2019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-hrip2q/Debug/cmTC_bccdf.lib" /MACHINE:X64  /machine:x64 cmTC_bccdf.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_bccdf.vcxproj -> C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-hrip2q\\Debug\\cmTC_bccdf.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-oq6vb5\\Debug\\cmTC_f4280.exe" /INCREMENTAL /ILK:"cmTC_f4280.dir\\Debug\\cmTC_f4280.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools 2019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-oq6vb5/Debug/cmTC_f4280.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Nathan/Documents/Projet/visionArti/out/build/Visual Studio Build Tools 2019 Release - amd64/CMakeFiles/CMakeScratch/TryCompile-oq6vb5/Debug/cmTC_f4280.lib" /MACHINE:X64  /machine:x64 cmTC_f4280.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_f4280.vcxproj -> C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-oq6vb5\\Debug\\cmTC_f4280.exe
         FinalizeBuildStatus:
-          Suppression du fichier "cmTC_bccdf.dir\\Debug\\cmTC_bccdf.tlog\\unsuccessfulbuild".
-          Mise à jour de l'horodatage "cmTC_bccdf.dir\\Debug\\cmTC_bccdf.tlog\\cmTC_bccdf.lastbuildstate".
-        Génération du projet "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-hrip2q\\cmTC_bccdf.vcxproj" terminée (cibles par défaut).
+          Suppression du fichier "cmTC_f4280.dir\\Debug\\cmTC_f4280.tlog\\unsuccessfulbuild".
+          Mise à jour de l'horodatage "cmTC_f4280.dir\\Debug\\cmTC_f4280.tlog\\cmTC_f4280.lastbuildstate".
+        Génération du projet "C:\\Users\\Nathan\\Documents\\Projet\\visionArti\\out\\build\\Visual Studio Build Tools 2019 Release - amd64\\CMakeFiles\\CMakeScratch\\TryCompile-oq6vb5\\cmTC_f4280.vcxproj" terminée (cibles par défaut).
         
         La génération a réussi.
             0 Avertissement(s)
             0 Erreur(s)
         
-        Temps écoulé 00:00:01.30
+        Temps écoulé 00:00:01.20
         
       exitCode: 0
   -
