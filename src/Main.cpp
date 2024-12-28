@@ -33,6 +33,9 @@ int main(int argc, char** argv) {
 
     // Comparer les résultats avec les données JSON
     float similarity = compareImageToJson(detectedLegos, "./data/results/1001.json");
+    if (similarity >= 0.0) {
+        std::cout << "Similarité : " << similarity << std::endl;
+    }
 
     // Afficher le nombre de Legos détectés
     std::cout << "Nombre de Legos : " << legoCount << std::endl;

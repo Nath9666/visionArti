@@ -57,32 +57,52 @@ float compareImageToJson(const std::vector<cv::Rect>& detectedLegos, const std::
     jsonData.ParseStream(is);
     fclose(fp);
 
-    // Vérifier que le nombre de Legos détectés correspond au nombre de Legos dans le JSON
-    if (!jsonData.IsArray() || detectedLegos.size() != jsonData.Size()) {
-        std::cerr << "Erreur : Le nombre de Legos détectés ne correspond pas aux données JSON" << std::endl;
+    // Vérifier que le format JSON est valide
+    if (!jsonData.HasMember("annotations") || !jsonData["annotations"].HasMember("object") || !jsonData["annotations"]["object"].IsArray()) {
+        std::cerr << "Erreur : Format JSON invalide" << std::endl;
         return -1.0;
     }
 
-    // Comparer les coordonnées des Legos détectés avec celles du JSON
-    for (rapidjson::SizeType i = 0; i < jsonData.Size(); i++) {
-        const cv::Rect& detectedLego = detectedLegos[i];
-        const rapidjson::Value& legoData = jsonData[i];
+    const rapidjson::Value& objects = jsonData["annotations"]["object"];
+    int totalLegos = objects.Size();
+    int matchedLegos = 0;
 
-        if (!legoData.HasMember("x") || !legoData.HasMember("y") || !legoData.HasMember("width") || !legoData.HasMember("height")) {
-            std::cerr << "Erreur : Les clés 'x', 'y', 'width', ou 'height' sont manquantes dans le JSON" << std::endl;
-            return -1.0;
+    // Comparer les coordonnées des Legos détectés avec celles du JSON
+    for (rapidjson::SizeType i = 0; i < objects.Size(); i++) {
+        const rapidjson::Value& legoData = objects[i]["bndbox"];
+
+        if (!legoData.HasMember("xmin") || !legoData.HasMember("ymin") || !legoData.HasMember("xmax") || !legoData.HasMember("ymax")) {
+            std::cerr << "Erreur : Les clés 'xmin', 'ymin', 'xmax', ou 'ymax' sont manquantes dans le JSON" << std::endl;
+            continue;
         }
 
-        int x = legoData["x"].GetInt();
-        int y = legoData["y"].GetInt();
-        int width = legoData["width"].GetInt();
-        int height = legoData["height"].GetInt();
+        int xmin = std::stoi(legoData["xmin"].GetString());
+        int ymin = std::stoi(legoData["ymin"].GetString());
+        int xmax = std::stoi(legoData["xmax"].GetString());
+        int ymax = std::stoi(legoData["ymax"].GetString());
 
-        if (detectedLego.x != x || detectedLego.y != y || detectedLego.width != width || detectedLego.height != height) {
-            std::cerr << "Erreur : Les coordonnées du Lego détecté ne correspondent pas aux données JSON" << std::endl;
-            return -1.0;
+        for (const auto& detectedLego : detectedLegos) {
+            int detectedXmin = detectedLego.x;
+            int detectedYmin = detectedLego.y;
+            int detectedXmax = detectedLego.x + detectedLego.width;
+            int detectedYmax = detectedLego.y + detectedLego.height;
+
+            // Calculer les marges d'erreur
+            int errorMarginX = static_cast<int>(0.1 * (xmax - xmin));
+            int errorMarginY = static_cast<int>(0.1 * (ymax - ymin));
+
+            // Vérifier si les coordonnées sont dans la marge d'erreur
+            if (abs(detectedXmin - xmin) <= errorMarginX &&
+                abs(detectedYmin - ymin) <= errorMarginY &&
+                abs(detectedXmax - xmax) <= errorMarginX &&
+                abs(detectedYmax - ymax) <= errorMarginY) {
+                matchedLegos++;
+                break;
+            }
         }
     }
 
-    return 0.0;
+    // Calculer le pourcentage de correspondance
+    float matchPercentage = static_cast<float>(matchedLegos) / totalLegos * 100.0f;
+    return matchPercentage;
 }
