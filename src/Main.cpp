@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
     int legoCount = detectLegos(image, detectedLegos, seuil, thresh);
 
     // Afficher les résultats de la détection
-    //?displayDetectionResults(image, detectedLegos);
+    displayDetectionResults(image, detectedLegos);
 
     // Afficher le nombre de Legos détectés
     std::cout << "Nombre de Legos : " << legoCount << std::endl;

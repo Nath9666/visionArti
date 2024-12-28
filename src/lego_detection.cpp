@@ -28,6 +28,7 @@ int detectLegos(const cv::Mat& inputImage, std::vector<cv::Rect>& detectedLegos,
 
     // Convertir l'image masquée en niveaux de gris
     cv::Mat grayImage = convertToGray(inputImage);
+    displayImage("Gray Image", grayImage);
     cv::Mat blurredImage = applyGaussianBlur(grayImage, 5);
     cv::Mat binaryImage = binarizeImage(blurredImage);
 

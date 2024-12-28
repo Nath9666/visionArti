@@ -64,6 +64,7 @@ Le projet LegoTracker a atteint ses objectifs en fournissant un système capable
 - [LegoCraftAI: Lego Detection and Shape Advisor](https://github.com/majid-200/LegoCraft-AI)
 - [Open CV installation](https://youtu.be/EqoH3gspQGg)
 - [How to use open CV](https://youtu.be/HQJlsmIUXOQ)
+
 - [Apprendre les bases du traitement d'image](https://patrick-bonnin.developpez.com/cours/vision/apprendre-bases-traitement-image/partie-1-introduction/)
 - [Procédure pas à pas : création d'un réseau de traitement d'image](https://learn.microsoft.com/fr-fr/cpp/parallel/concrt/walkthrough-creating-an-image-processing-network?view=msvc-170)
 - [Contour Detection using OpenCV (Python/C++)](https://learnopencv.com/contour-detection-using-opencv-python-c/)
