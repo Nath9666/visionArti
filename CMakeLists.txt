@@ -7,6 +7,9 @@ set(OpenCV_DIR "C:/Users/Nathan/Documents/Projet/visionArti/opencv/build")
 # Trouver le package OpenCV
 find_package(OpenCV REQUIRED)
 
+# Ajouter le chemin vers RapidJSON
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
 # Inclure les répertoires d'en-tête
 include_directories(${OpenCV_INCLUDE_DIRS})
 

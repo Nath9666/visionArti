@@ -5,32 +5,37 @@
 #include <vector>
 
 // Fonction pour détecter et compter les Legos dans une image
-int detectLegos(const cv::Mat& inputImage, std::vector<cv::Rect>& detectedLegos, int seuil, int thresh) {
+int detectLegos(const cv::Mat& inputImage, std::vector<cv::Rect>& detectedLegos, int seuil, int thresh, bool ImageDisplay) {
     // Convertir l'image en espace de couleur HSV
     cv::Mat hsvImage;
     cv::cvtColor(inputImage, hsvImage, cv::COLOR_BGR2HSV);
 
     // Segmenter les couleurs spécifiques aux Legos
-    cv::Mat mask1, mask2, mask3, mask4, combinedMask;
+    cv::Mat mask1, mask2, mask3, combinedMask;
     cv::inRange(hsvImage, cv::Scalar(0, 100, 100), cv::Scalar(10, 255, 255), mask1); // Rouge
-    cv::inRange(hsvImage, cv::Scalar(20, 100, 100), cv::Scalar(30, 255, 255), mask2); // Jaune
-    cv::inRange(hsvImage, cv::Scalar(40, 100, 100), cv::Scalar(50, 255, 255), mask3); // Vert
-    cv::inRange(hsvImage, cv::Scalar(70, 100, 100), cv::Scalar(90, 255, 255), mask4); // Bleu
-
+    cv::inRange(hsvImage, cv::Scalar(40, 100, 100), cv::Scalar(50, 255, 255), mask2); // Vert
+    cv::inRange(hsvImage, cv::Scalar(70, 100, 100), cv::Scalar(90, 255, 255), mask3); // Bleu
+    
     // Combiner les masques
     cv::bitwise_or(mask1, mask2, combinedMask);
     cv::bitwise_or(combinedMask, mask3, combinedMask);
-    cv::bitwise_or(combinedMask, mask4, combinedMask);
-
+    
     // Appliquer le masque à l'image d'entrée
     cv::Mat maskedImage;
     cv::bitwise_and(inputImage, inputImage, maskedImage, combinedMask);
 
     // Convertir l'image masquée en niveaux de gris
     cv::Mat grayImage = convertToGray(inputImage);
-    displayImage("Gray Image", grayImage);
     cv::Mat blurredImage = applyGaussianBlur(grayImage, 5);
     cv::Mat binaryImage = binarizeImage(blurredImage);
+
+    if (ImageDisplay) {
+        displayImage("Image originale", inputImage);
+        displayImage("Image masquée", maskedImage);
+        displayImage("Image en niveaux de gris", grayImage);
+        displayImage("Image floutée", blurredImage);
+        displayImage("Image binaire", binaryImage);
+    }
 
     // Segmentation de région par croissance de région
     cv::Mat labels, stats, centroids;
