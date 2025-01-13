@@ -15,3 +15,6 @@ Bruit de détection :
     - Ouverture = érosion + dilatation : enlève les bruits faux positifs (petites formes)
     - Fermeture = dilatation + érosion : enlève les bruits faux négatifs (petites trous = petite formes du fond)
 "Dynamiques": On considère le pixel en mouvement si on le détecte positif un minimum de fois.
+
+Boucle sur 50 images : configuration du gabarit 
+Boucle sur le reste de la séquence 
