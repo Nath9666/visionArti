@@ -24,6 +24,7 @@
 ## Diapositive 4 : Prétraitement de l'image
 
 - **Étapes :**
+
   - Conversion en niveaux de gris
   - Filtrage gaussien
   - Binarisation
@@ -37,7 +38,6 @@
       return binaryImage;
   }
   ```
-
 - Image : Exemple d'image avant et après chaque étape de prétraitement
 
 ## Diapositive 5 : Segmentation de région
