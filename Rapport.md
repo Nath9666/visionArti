@@ -4,8 +4,7 @@ Ce projet a été réalisé par **Nathan MOREL**, **Alexandre BÉRAUD** et **Tom
 
 Le projet LegoTracker a pour objectif de reconnaître et de compter le nombre de pièces de Lego dans une image. Le système doit être capable de traiter des images en utilisant des techniques de traitement d'image pour identifier et compter les Legos. Les principales exigences du projet sont les suivantes :
 
-1. **Reconnaissance des couleurs** : Utiliser la décomposition HSV pour détecter les couleurs principales des Legos.
-2. **Détection des contours** : Utiliser l'algorithme de Canny pour détecter les contours des Legos.
+1. **Détection des contours** : Utiliser l'algorithme de Canny pour détecter les contours des Legos.
 3. **Segmentation de région** : Utiliser la méthode de croissance de région pour segmenter l'image en différentes régions.
 4. **Affichage des résultats** : Afficher les résultats de la détection et du nombre de Legos détectés.
 
@@ -406,8 +405,8 @@ Le projet LegoTracker a atteint ses objectifs en fournissant un système capable
 - [LegoCraftAI: Lego Detection and Shape Advisor](https://github.com/majid-200/LegoCraft-AI)
 - [Open CV installation](https://youtu.be/EqoH3gspQGg)
 - [How to use open CV](https://youtu.be/HQJlsmIUXOQ)
-- [Apprendre les bases du traitement d'image](https://patrick-bonnin.developpez.com/cours/vision/apprendre-bases-traitement-image/partie-1-introduction/)
-- [Procédure pas à pas : création d'un réseau de traitement d'image](https://learn.microsoft.com/fr-fr/cpp/parallel/concrt/walkthrough-creating-an-image-processing-network?view=msvc-170)
+- [Apprendre les bases du traitement d&#39;image](https://patrick-bonnin.developpez.com/cours/vision/apprendre-bases-traitement-image/partie-1-introduction/)
+- [Procédure pas à pas : création d&#39;un réseau de traitement d&#39;image](https://learn.microsoft.com/fr-fr/cpp/parallel/concrt/walkthrough-creating-an-image-processing-network?view=msvc-170)
 - [Contour Detection using OpenCV (Python/C++)](https://learnopencv.com/contour-detection-using-opencv-python-c/)
 
 ### DataSets
