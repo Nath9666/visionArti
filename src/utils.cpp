@@ -88,8 +88,8 @@ float compareImageToJson(const std::vector<cv::Rect>& detectedLegos, const std::
             int detectedYmax = detectedLego.y + detectedLego.height;
 
             // Calculer les marges d'erreur
-            int errorMarginX = static_cast<int>(0.1 * (xmax - xmin));
-            int errorMarginY = static_cast<int>(0.1 * (ymax - ymin));
+            int errorMarginX = static_cast<int>(0.2 * (xmax - xmin));
+            int errorMarginY = static_cast<int>(0.2 * (ymax - ymin));
 
             // Vérifier si les coordonnées sont dans la marge d'erreur
             if (abs(detectedXmin - xmin) <= errorMarginX &&

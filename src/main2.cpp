@@ -23,7 +23,7 @@ int test(int argc, char** argv) {
 
     // Détection des Legos
     std::vector<cv::Rect> legos;
-    int legoCount = detectLegos(processedImage, legos, 100, 100, true);
+    int legoCount = detectLegos(processedImage, legos, 100, 100, true, 5);
 
     // Affichage des résultats
     displayDetectionResults(image, legos);

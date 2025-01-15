@@ -5,7 +5,7 @@
 #include <vector>
 
 // Fonction pour détecter et compter les Legos dans une image
-int detectLegos(const cv::Mat& inputImage, std::vector<cv::Rect>& detectedLegos, int seuil, int thresh, bool ImageDisplay) {
+int detectLegos(const cv::Mat& inputImage, std::vector<cv::Rect>& detectedLegos, int seuil, int thresh, bool ImageDisplay, int blur) {
     // Convertir l'image en espace de couleur HSV
     cv::Mat hsvImage;
     cv::cvtColor(inputImage, hsvImage, cv::COLOR_BGR2HSV);
@@ -26,7 +26,7 @@ int detectLegos(const cv::Mat& inputImage, std::vector<cv::Rect>& detectedLegos,
 
     // Convertir l'image masquée en niveaux de gris
     cv::Mat grayImage = convertToGray(inputImage);
-    cv::Mat blurredImage = applyGaussianBlur(grayImage, 5);
+    cv::Mat blurredImage = applyGaussianBlur(grayImage, blur);
     cv::Mat binaryImage = binarizeImage(blurredImage);
 
     if (ImageDisplay) {
