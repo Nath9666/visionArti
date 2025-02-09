@@ -2,9 +2,9 @@
 /**
  * @file EdMotionDetect.c
  *
- * @brief Motion Detection using Simple Difference Method
+ * @brief Motion Detection using Background Subtraction Method
  * This file contains the main function for processing a video sequence
- * to detect motion using the simple difference method.
+ * to detect motion using the background subtraction method.
  *
  * @date 2025.02.09 : creation.
  * @date 2025.02.09 : last modification.
@@ -34,11 +34,12 @@
 #include <string.h>
 #include "EdStructures.h"
 #include "EdUtilities.h"
-#include "EdLibMotionDetect.h"
+#include "EdLibMotionDetectFond.h"
 
 int main(int argc, char **argv) {
-    EdIMAGE *imCur = NULL, *imRef = NULL, *imRes = NULL;
+    EdIMAGE *imCur = NULL, *imBg = NULL, *imRes = NULL;
     int nlig = 0, ncol = 0, iTh;
+    float alpha;
     int NumRef, Num;
     unsigned char prof = 0;
     FILE *fichier = NULL, *fichres = NULL;
@@ -47,18 +48,20 @@ int main(int argc, char **argv) {
     char nomImCur[255], nomImRes[255];
 
     // USAGE
-    if (argc != 3) {
-        fprintf(stderr, "USAGE :  MotionDetect image iTh \n");
-        fprintf(stderr, "image : name of the image to filter \n");
+    if (argc != 4) {
+        fprintf(stderr, "USAGE :  MotionDetect image iTh alpha\n");
+        fprintf(stderr, "image : name of the image to filter\n");
         fprintf(stderr, "iTh : Threshold value\n");
+        fprintf(stderr, "alpha : Coefficient for updating the background image\n");
         fprintf(stderr, "Motion detection \n");
         exit(0);
     }
     sscanf(argv[1], "%[^0-9]%[0-9]%*[.]%[pm]", nomGen, nomNum, nomExt);
     NumRef = atoi(nomNum);
     iTh = atoi(argv[2]);
-    printf("NomGen %s \n NumRef %d, nomExt %s iTh = %d\n",
-           nomGen, NumRef, nomExt, iTh);
+    alpha = atof(argv[3]);
+    printf("NomGen %s \n NumRef %d, nomExt %s iTh = %d alpha = %f\n",
+           nomGen, NumRef, nomExt, iTh, alpha);
     Num = NumRef;
 
     // Ouverture Fichier Image de Reference
@@ -80,12 +83,12 @@ int main(int argc, char **argv) {
         exit(0);
     }
 
-    // Creation of Images Header and Data : ImRef, imCur, imRes
-    if (crea_IMAGE(imRef) == NULL) {
+    // Creation of Images Header and Data : imBg, imCur, imRes
+    if (crea_IMAGE(imBg) == NULL) {
         fprintf(stderr, "Error of Memory Allocation \n");
         exit(0);
     }
-    ret = Creation_Image(imRef, nlig, ncol, prof); // Image Data
+    ret = Creation_Image(imBg, nlig, ncol, prof); // Image Data
 
     if (crea_IMAGE(imCur) == NULL) {
         fprintf(stderr, "Error of Memory Allocation \n");
@@ -99,8 +102,8 @@ int main(int argc, char **argv) {
     }
     ret = Creation_Image(imRes, nlig, ncol, prof); // Image Data
 
-    // Reading of Image ImRef from file to Memory
-    ret = Reading_ImageData(fichier, imRef); // Image Pixel Data
+    // Reading of Image imBg from file to Memory
+    ret = Reading_ImageData(fichier, imBg); // Image Pixel Data
     if (!ret) {
         fprintf(stderr, "Problem of Reading \n");
         exit(0);
@@ -113,7 +116,7 @@ int main(int argc, char **argv) {
         // Ouverture des Images Cur et Res
         // Creation des Noms des Images
         sprintf(nomImCur, "../NSequenceCote/%s%04d.ppm", nomGen, Num);
-        sprintf(nomImRes, "../ImRes/%sRes%04d.ppm", nomGen, Num);
+        sprintf(nomImRes, "../ImRes/%sFondRes%04d.ppm", nomGen, Num);
 
         // Source Image
         if (!(fichier = fopen(nomImCur, "rb"))) {
@@ -139,7 +142,7 @@ int main(int argc, char **argv) {
         }
 
         // Detection du Mouvement
-        ret = MotionDetect(imRef, imCur, imRes, iTh);
+        ret = MotionDetectBg(imBg, imCur, imRes, iTh, alpha);
 
         // Writing of the Image Result in File
         fprintf(fichres, "P6\n#creating by EdEnviTI\n%d %d\n255\n", (int)ncol, (int)nlig); // Header
@@ -153,7 +156,7 @@ int main(int argc, char **argv) {
     } // fin boucle
 
     // Liberation de la Memoire
-    ret = Free_Image(imRef);
+    ret = Free_Image(imBg);
     if (ret == FALSE) {
         fprintf(stderr, "Problem of Free the Memory \n");
     }

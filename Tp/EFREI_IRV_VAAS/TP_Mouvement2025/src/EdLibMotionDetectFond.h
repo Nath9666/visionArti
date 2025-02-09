@@ -1,12 +1,14 @@
 // ------------------------------------------------------------------
 /**
- * @file 	EdUtilities.h
+ * @file EdLibMeanFiltering.h
  *
- * @brief 	Prototypes of Functions of Reading, Writing, creation of images.
+ * @brief Prototype of Mean Filter Functions
+
  *
- * @author 	Patrick J. Bonnin
- * @email  	patrick.bonnin@gmail.com
+ * @author Patrick Bonnin
+ * @email  patrick.bonnin@gmail.com
  * @date 2012.11.01 : creation.
+ * @date 2012.11.01 : last modification.
  */
 // ------------------------------------------------------------------
 /* COPYRIGHT (C)	2012, P. Bonnin <patrick.bonnin@gmail.com>
@@ -21,8 +23,8 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULIAR PURPOSE.
  * See the GNU Lesser General Public License for more details.
  *
- * You  should  have received a copy of the GNU Lesser General Public 
- * License  along  with  this  library;  if  not,  write  to the Free 
+ * You  should  have received a copy of the GNU Lesser General Public
+ * License  along  with  this  library;  if  not,  write  to the Free
  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 // ------------------------------------------------------------------
@@ -30,29 +32,6 @@
  * 2012.11.01 : creation
  */
 // ------------------------------------------------------------------
-#ifndef _UT
-#define _UT
-int Reading_ImageHeader(FILE *fichier, int *pncol, 
-  int *pnlig, unsigned char *pprof);
-int Creation_Image (EdIMAGE *image, int nlig, int ncol, 
-       unsigned char prof);
-int Reading_ImageData(FILE *fichier,EdIMAGE *image);
-int Writing_ImageData(FILE *fichier,EdIMAGE *image);
-int Writing_ImageHeader(FILE *fichier, int ncol, int nlig, unsigned char prof); 
-int Free_Image(EdIMAGE *image);
-void Label_Conversion(EdIMAGE *imLbl, EdIMAGE *imCLbl);
-void LUT_Edition(unsigned char palette[64][3]);
-unsigned char  Level(int k);
+#include "EdStructures.h"
 
-#endif
-
-
-
-
-
-
-
-
-
-
-
+int MotionDetectBg(EdIMAGE *imBg, EdIMAGE *imCur, EdIMAGE *imRes, int iTh, float alpha);

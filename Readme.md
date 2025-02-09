@@ -65,3 +65,23 @@ imagePts="../ImRes/${nom_image}_pts.pgm"
 [Image points](./Tp/EFREI_IRV_VAAS/TPContour/NewAdonner_GradKThrThi_Sep/ImRes/Bureau_pts.pgm)
 
 ## Traveau pratique 2: Detection de mouvement
+
+### Objectif
+
+L'objectif de ce TP est de détecter les mouvements dans une séquence d'images en utilisant des algorithmes de différence d'images. La détection de mouvement est une tâche importante dans de nombreuses applications de vision par ordinateur, telles que la surveillance vidéo et la reconnaissance de mouvement.
+
+Méthodologie
+Nous avons utilisé une méthode de soustraction d'images pour détecter les changements entre des images consécutives. Le processus comprend les étapes suivantes :
+
+1. Lecture des images
+2. Calcul de la différence entre les images
+3. Application d'un seuil pour détecter le mouvement
+4. Affichage des résultats
+
+#### Etape 1
+
+#### Etape 2
+
+#### Etape 3
+
+#### Etape 4

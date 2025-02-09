@@ -287,6 +287,13 @@ int Writing_ImageData(FILE *fichier,EdIMAGE *image)
   return TRUE;
 } /* --- End of Writing_ImageData --- */
 
+int Writing_ImageHeader(FILE *fichier, int ncol, int nlig, unsigned char prof) {
+  if (fprintf(fichier, "P6\n%d %d\n255\n", ncol, nlig) < 0) {
+      return 0;
+  }
+  return 1;
+}
+
 // Free_Image -----------------------------------------------------
 /** 
  * @brief	Free the MEmory allocated for the EdIMAGE
