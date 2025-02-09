@@ -6,6 +6,8 @@
 #include "EdLibThreshold.h"
 #include "EdLibThinning.h"
 #include "EdLibEdgeUtilities.h"
+//#include "LibSeuillage.h"
+//#include "LibAffinage.h"
 
 int main(int argc, char **argv)
 {

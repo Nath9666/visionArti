@@ -4,11 +4,10 @@ mkdir -p ../bin
 # Compiler EdGradientKirsh
 gcc -o ../bin/EdGradientKirsh DetectionContours.c EdLibGradientKirsh4SepMasks.c EdLibThinning.c EdLibEdgeUtilities.c EdUtilities.c EdLibThreshold.c
 
-
 cd ../bin
 
 # Définir les variables d'image
-nom_image="PavinReal"
+nom_image="Bureau"
 
 image="../image/${nom_image}.pgm"
 imageNorm="../ImRes/${nom_image}_norm.pgm"
