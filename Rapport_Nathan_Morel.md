@@ -1,8 +1,10 @@
-# Rapport de Traveaux pratiques
+# Rapport de Travaux pratiques
+
+Redigé par Nathan Morel
 
 ## Introduction
 
-Ce rapport présente les travaux pratiques réalisés dans le cadre du projet de vision artificielle. Les TP se concentrent sur deux thèmes principaux : la détection de contours et la détection de mouvement. Chaque section détaille les objectifs, la méthodologie, les résultats obtenus et les applications potentielles.
+Ce rapport présente les travaux pratiques réalisés dans le cadre du projet de vision artificielle. Les TP se concentrent sur deux thèmes principaux : la détection de contours et la détection de mouvement. Chaque section détaille les objectifs, la méthodologie, les résultats obtenus.
 
 ## Traveau pratique 1: Contour et détection
 
@@ -46,7 +48,7 @@ gcc -o ../bin/EdGradientKirsh DetectionContours.c EdLibGradientKirsh4SepMasks.c 
 cd ../bin
 
 # Définir les variables d'image
-nom_image="PavinReal"
+nom_image="Bureau"
 
 image="../image/${nom_image}.pgm"
 imageNorm="../ImRes/${nom_image}_norm.pgm"
@@ -70,7 +72,8 @@ imagePts="../ImRes/${nom_image}_pts.pgm"
 
 L'objectif de ce TP est de détecter les mouvements dans une séquence d'images en utilisant des algorithmes de différence d'images. La détection de mouvement est une tâche importante dans de nombreuses applications de vision par ordinateur, telles que la surveillance vidéo et la reconnaissance de mouvement.
 
-Méthodologie
+### Méthodologie
+
 Nous avons utilisé une méthode de soustraction d'images pour détecter les changements entre des images consécutives. Le processus comprend les étapes suivantes :
 
 1. Lecture des images
@@ -144,6 +147,7 @@ int MotionDetect(EdIMAGE *imRef, EdIMAGE *imCur, EdIMAGE *imRes, int iTh) {
 Le script de compilation Compile.sh compile les fichiers nécessaires et génère les exécutables. Les images de sortie sont stockées dans le répertoire ImRes.
 
 ```bash
+
 # Créer le répertoire bin s'il n'existe pas
 mkdir -p ../bin
 
@@ -180,6 +184,8 @@ mkdir -p ../ImRes/NImCoteFond
 mv ../ImRes/* ../ImRes/NImCoteFond/
 
 echo "EdMotionDetect and EdMotionDetectFond executed"
+
+# Deplace le dossier NImCoteFond/NImCote dans ImRes car il a été bouger au dernier deplacement
 mv ../ImRes/NImCoteFond/NImCote ../ImRes/
 ```
 
