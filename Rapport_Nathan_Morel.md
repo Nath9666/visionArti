@@ -10,28 +10,51 @@ Ce rapport présente les travaux pratiques réalisés dans le cadre du projet de
 
 ### Objectif
 
-L'objectif de ce TP est de détecter les contours dans une image en utilisant des algorithmes de gradient. La détection de contours est une étape cruciale dans de nombreuses applications de vision par ordinateur, telles que la reconnaissance de formes et la segmentation d'images.
+Le but de ce TP est de comprendre et d'implémenter en langage C, dans l'environnement logiciel EdVision, les premières étapes d'une chaîne d'opérateurs de segmentation en contours. Les étapes incluent :
 
-### Méthodologie
+1. Algorithme de Kirsch à 4 directions
+2. Seuillage sur la norme du gradient
+3. Affinage des contours
 
-Nous avons utilisé l'algorithme de Kirsh pour calculer le gradient de l'image. Le processus comprend les étapes suivantes :
+### Étapes à Réaliser
 
-1. Prétraitement de l'image
-2. Calcul du gradient
-3. Seuillage
-4. Affinement des contours
+#### 1. Algorithme de Kirsch à 4 directions
 
-### Code important
+**Principe** : Projeter le vecteur gradient selon 4 directions (0°, 90°, 45°, -45°) et choisir la projection la plus proche comme approximation du gradient réel.
+Masques de convolution : Utiliser des masques spécifiques pour chaque direction.
 
-#### Calcul du Gradient avec l'Algorithme de Kirsh
+#### 2. Seuillage sur la Norme du Gradient
 
-Le calcul du gradient est effectué à l'aide de la fonction GradientKirsh4SepMask dans le fichier DetectionContours.c. Cette fonction applique un masque de Kirsh à l'image pour détecter les contours.
+Objectif : Seuiler les pixels en fonction de la norme du gradient pour identifier les points de contour.
 
-#### Seuillage
+#### 3. Affinage des Contours
 
-Le seuillage est réalisé avec la fonction ClassicThreshold.
+Principe : Réduire les contours à une épaisseur d'un pixel en ne conservant que les points de contour maximaux localement dans la direction du gradient.
+Algorithme à deux voisins : Comparer le pixel courant avec ses deux voisins dans la direction du gradient.
+Algorithme à un seul voisin (pour l'optimisation) : Comparer le pixel courant avec un seul voisin dans le passé.
 
-### Résultats
+### Travaux à Réaliser
+
+**Fichiers à réaliser :**
+
+1. DetectionContours.c
+2. LibKirsh4.c et .h
+3. LibSeuillage.c et .h (à reprendre)
+4. LibAffinage.c et .h
+   **Détails des fichiers :**
+
+- DetectionContours.c : Interface de l'opérateur, gestion des images en entrée et sortie.
+- LibKirsh4.c : Calcul du gradient selon l'algorithme de Kirsch.
+- LibSeuillage.c : Reprendre le code du semestre précédent.
+- LibAffinage.c : Implémenter l'opérateur d'affinage.
+
+### Comparaison des Résultats
+
+La comparaison entre les méthodes optimisée et non optimisée se concentre principalement sur le temps de calcul et l'utilisation de la mémoire. La méthode optimisée, qui regroupe les étapes de calcul du gradient, seuillage et affinage en un seul balayage vidéo, est généralement plus rapide et utilise moins de mémoire, car elle réduit le nombre de lectures et de traitements de l'image. Cependant, elle peut être plus complexe à implémenter et à maintenir. En revanche, la méthode non optimisée, bien que plus simple et flexible, peut être plus lente et consommer plus de mémoire en raison des multiples balayages de l'image et des images intermédiaires nécessaires pour chaque étape.
+
+### Code de Compilation
+
+Voici le script de compilation utilisé pour générer les exécutables :
 
 Les contours détectés sont stockés dans des fichiers d'image et peuvent être visualisés pour évaluer la précision de l'algorithme.
 
@@ -60,11 +83,17 @@ imagePts="../ImRes/${nom_image}_pts.pgm"
 
 #### Image resultats
 
-[Image originale](./Tp/EFREI_IRV_VAAS/TPContour/NewAdonner_GradKThrThi_Sep/Image/Bureau.pgm)
+![Image originale](./Tp/EFREI_IRV_VAAS/TPContour/NewAdonner_GradKThrThi_Sep/Image/Bureau.png)
 
-[Image normale](./Tp/EFREI_IRV_VAAS/TPContour/NewAdonner_GradKThrThi_Sep/ImRes/Bureau_norm.pgm)
+Image originale
 
-[Image points](./Tp/EFREI_IRV_VAAS/TPContour/NewAdonner_GradKThrThi_Sep/ImRes/Bureau_pts.pgm)
+![Image normale](./Tp/EFREI_IRV_VAAS/TPContour/NewAdonner_GradKThrThi_Sep/ImRes/Bureau_norm.png)
+
+Image normale
+
+![Image points](./Tp/EFREI_IRV_VAAS/TPContour/NewAdonner_GradKThrThi_Sep/ImRes/Bureau_pts.png)
+
+Image points avec comme seuil 10
 
 ## Traveau pratique 2: Detection de mouvement
 
@@ -190,3 +219,17 @@ mv ../ImRes/NImCoteFond/NImCote ../ImRes/
 ```
 
 Les zones de mouvement détectées sont mises en évidence dans les images résultantes, permettant une analyse visuelle des changements.
+
+#### Image resultats
+
+![Image originale](Tp\EFREI_IRV_VAAS\TP_Mouvement2025/NImCote0001_1.png)
+
+Image originale
+
+![Image mouvement](./Tp/EFREI_IRV_VAAS\TP_Mouvement2025/NImCoteRes0001.png)
+
+Image mouvement avec un seuil de 30
+
+![Image fond](./Tp/EFREI_IRV_VAAS\TP_Mouvement2025/NImCoteFondRes0001_1.png)
+
+Image fond avec un seuil de 30 et un alpha de 0.01

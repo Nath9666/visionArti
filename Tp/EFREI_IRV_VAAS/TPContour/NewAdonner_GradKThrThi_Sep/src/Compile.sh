@@ -14,4 +14,4 @@ imageNorm="../ImRes/${nom_image}_norm.pgm"
 imagePts="../ImRes/${nom_image}_pts.pgm"
 
 # Exécuter le programme avec les arguments appropriés
-./EdGradientKirsh "$image" "$imageNorm" "$imagePts" 20
+./EdGradientKirsh "$image" "$imageNorm" "$imagePts" 10
